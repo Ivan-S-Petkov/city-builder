@@ -1,15 +1,15 @@
  # City Builder App
 
  The goal of this app is to build city, that dynamically constructs houses based on input data. This feature should offer an intuitive and interactive user experience, enabling users to:
-* Customize Houses: Adjust attributes like the color, number of floors, and name of each house.
-* Manage Houses: Add new houses, duplicate existing ones, or remove them with ease.
+* Customize Houses: Adjust attributes like the color, number of floors, and name of each house. :heavy_check_mark:
+* Manage Houses: Add new houses, duplicate existing ones, or remove them with ease. :heavy_check_mark:
 * Display Weather: Add sun, rain, or snow icons and display the current temperature based on the selected location.
 
   ### Additional Enhancements
 
-  * Add smooth animations/transitions for an enhanced user experience.
+  * Add smooth animations/transitions for an enhanced user experience. :heavy_check_mark:
   * Implement drag & drop functionality.
-  * Allow users to change the color of individual floors.
+  * Allow users to change the color of individual floors. :heavy_check_mark:
   * Write and include tests to ensure the reliability of your solution.
 
 
