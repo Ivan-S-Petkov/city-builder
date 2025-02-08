@@ -3,7 +3,7 @@
  The goal of this app is to build city, that dynamically constructs houses based on input data. This feature should offer an intuitive and interactive user experience, enabling users to:
 * Customize Houses: Adjust attributes like the color, number of floors, and name of each house. :heavy_check_mark:
 * Manage Houses: Add new houses, duplicate existing ones, or remove them with ease. :heavy_check_mark:
-* Display Weather: Add sun, rain, or snow icons and display the current temperature based on the selected location.
+* Display Weather: Add sun, rain, or snow icons and display the current temperature based on the selected location. :heavy_check_mark:
 
   ### Additional Enhancements
 
