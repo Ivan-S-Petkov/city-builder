@@ -2,6 +2,7 @@ import { useHouses } from "@/hooks/useHouses";
 import HomeIcon from "../icons/HomeIcon";
 import HouseForm from "../sections/HouseForm";
 import Button from "../ui/Button";
+import Weather from "../sections/Weather";
 
 function Sidebar() {
   const { houses, createNewHouse } = useHouses();
@@ -36,6 +37,7 @@ function Sidebar() {
           </p>
         )}
       </div>
+      <Weather />
     </div>
   );
 }
