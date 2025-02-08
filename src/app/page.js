@@ -4,6 +4,7 @@ import Header from "@/components/layout/Header";
 import Sidebar from "@/components/layout/Sidebar";
 import Building from "@/components/sections/Building";
 import { useHouses } from "@/hooks/useHouses";
+import { AnimatePresence } from "framer-motion";
 
 export default function Home() {
   const { houses } = useHouses();
@@ -13,15 +14,15 @@ export default function Home() {
       <Header />
       <main className="pl-4 flex gap-8">
         <Sidebar />
-        <div className="flex flex-row gap-5 grow justify-center pr-4">
+        <div className="flex flex-row self-start gap-5 grow justify-center pr-4 items-end">
           {houses.length > 0 ? (
-            <>
-              {houses.map((house, index) => (
-                <Building key={index} house={house} />
+            <AnimatePresence>
+              {houses.map((house) => (
+                <Building key={house.id} house={house} />
               ))}
-            </>
+            </AnimatePresence>
           ) : (
-            <p className="text-center">Build your dream city</p>
+            <p className="text-center self-start">Build your dream city</p>
           )}
         </div>
       </main>
