@@ -1,6 +1,7 @@
 "use client";
 
 import { createContext, useState, useEffect } from "react";
+import { v4 as uuidv4 } from "uuid";
 
 // Create the context
 export const HousesContext = createContext();
@@ -25,15 +26,37 @@ export default function HousesProvider({ children }) {
   // Create new house
   const createNewHouse = () => {
     const house = {
-      name: "House 1",
-      floors: 1,
-      color: "",
+      id: uuidv4(),
+      name: "House",
+      floors: ["#ffffff"],
+      color: "#ffffff",
     };
     setHouses((prev) => [...prev, house]);
   };
 
+  // Update house my index
+  const updateHouse = (index, house) => {
+    const houseArr = [...houses];
+    houseArr[index] = house;
+    setHouses(houseArr);
+  };
+
+  // Delete house by index
+  const deleteHouse = (index) => {
+    setHouses(houses.filter((house, i) => i != index));
+  };
+
+  // Duplicate house
+  const copyHouse = (house) => {
+    // Create new array for floors and new unique id
+    let newHouse = { ...house, floors: [...house.floors], id: uuidv4() };
+    setHouses((prev) => [...prev, newHouse]);
+  };
+
   return (
-    <HousesContext.Provider value={{ houses, createNewHouse }}>
+    <HousesContext.Provider
+      value={{ houses, createNewHouse, updateHouse, deleteHouse, copyHouse }}
+    >
       {children}
     </HousesContext.Provider>
   );
