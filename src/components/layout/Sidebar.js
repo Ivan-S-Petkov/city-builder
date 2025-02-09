@@ -1,11 +1,12 @@
-import { useHouses } from "@/hooks/useHouses";
+import { useHousesActions, useHousesState } from "@/hooks/useHouses";
 import HomeIcon from "../icons/HomeIcon";
 import HouseForm from "../sections/HouseForm";
 import Button from "../ui/Button";
 import Weather from "../sections/Weather";
 
 function Sidebar() {
-  const { houses, createNewHouse } = useHouses();
+  const houses = useHousesState();
+  const { createNewHouse } = useHousesActions();
 
   return (
     <div className="w-[340px] flex flex-col shrink-0">
@@ -16,7 +17,12 @@ function Sidebar() {
         {houses.length > 0 ? (
           <div>
             {houses.map((house, index) => (
-              <HouseForm key={house.id} index={index} house={house} />
+              <HouseForm
+                key={house.id}
+                index={index}
+                house={house}
+                isFull={houses.length >= 7}
+              />
             ))}
           </div>
         ) : (
