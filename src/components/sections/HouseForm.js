@@ -1,13 +1,14 @@
-import { useHouses } from "@/hooks/useHouses";
+import { useHousesActions } from "@/hooks/useHouses";
 import DeleteIcon from "../icons/DeleteIcon";
 import Button from "../ui/Button";
 import Slider from "../ui/Slider";
 import Input from "../forms/Input";
 import HouseName from "../ui/HouseName";
 import CopyIcon from "../icons/CopyIcon";
+import { memo } from "react";
 
-function HouseForm({ index, house }) {
-  const { houses, deleteHouse, updateHouse, copyHouse } = useHouses();
+const HouseForm = memo(function HouseForm({ index, house, isFull }) {
+  const { deleteHouse, updateHouse, copyHouse } = useHousesActions();
 
   const updateFloors = (floors) => {
     // Check if we should add aditional values in floors array or slice them
@@ -65,7 +66,7 @@ function HouseForm({ index, house }) {
         </div>
       </div>
       <div>
-        {houses.length < 7 && (
+        {!isFull && (
           <Button
             icon={<CopyIcon size={20} />}
             clickHandler={() => {
@@ -82,6 +83,6 @@ function HouseForm({ index, house }) {
       </div>
     </div>
   );
-}
+});
 
 export default HouseForm;
