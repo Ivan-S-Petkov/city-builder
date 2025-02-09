@@ -20,18 +20,18 @@ function HouseForm({ index, house }) {
       house.floors = floorsArr;
       house.color = house.floors[house.floors.length - 1];
     }
-    updateHouse(index, house);
+    updateHouse(index, { ...house });
   };
 
   const updateColor = (color) => {
     house.color = color;
     house.floors[house.floors.length - 1] = color;
-    updateHouse(index, house);
+    updateHouse(index, { ...house });
   };
 
   const updateName = (name) => {
     house.name = name.trim();
-    updateHouse(index, house);
+    updateHouse(index, { ...house });
   };
 
   return (
