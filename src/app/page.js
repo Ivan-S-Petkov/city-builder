@@ -4,11 +4,11 @@ import Header from "@/components/layout/Header";
 import Sidebar from "@/components/layout/Sidebar";
 import Building from "@/components/sections/Building";
 import WeatherWidget from "@/components/ui/WeatherWidget";
-import { useHouses } from "@/hooks/useHouses";
+import { useHousesState } from "@/hooks/useHouses";
 import { AnimatePresence } from "framer-motion";
 
 export default function Home() {
-  const { houses } = useHouses();
+  const houses = useHousesState();
 
   return (
     <div className="flex flex-col max-w-7xl m-auto gap-4">
