@@ -1,9 +1,10 @@
+import { memo } from "react";
 import RoofIcon from "../icons/RoofIcon";
 import Floor from "../ui/Floor";
 import GroundFloor from "../ui/GroundFloor";
 import { AnimatePresence, motion } from "framer-motion";
 
-function Building({ house }) {
+const Building = memo(function Building({ house }) {
   return (
     <motion.div
       initial={{ opacity: 0, scale: 0.8 }}
@@ -34,6 +35,6 @@ function Building({ house }) {
       </div>
     </motion.div>
   );
-}
+});
 
 export default Building;

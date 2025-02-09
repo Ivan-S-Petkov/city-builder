@@ -1,6 +1,7 @@
+import { memo } from "react";
 import Window from "./Window";
 
-function Floor({ color }) {
+const Floor = memo(function Floor({ color }) {
   return (
     <div
       className="flex justify-around border-l-4 border-r-4 border-black"
@@ -10,6 +11,6 @@ function Floor({ color }) {
       <Window />
     </div>
   );
-}
+});
 
 export default Floor;
